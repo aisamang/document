@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset=UTF-8" />
+    <title>Users</title>
+</head>
+<body>
+<h1>ADD USERS</h1>
+<form method="post" action="/users/add">
+    <input type="text", name="name", placeholder="Insert the name">
+    <input type="text", name="surname", placeholder="Insert the surname">
+    <input type="submit" value="Add">
+</form>
+<h1>LIST OF USERS</h1>
+{{#users}}
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{id}}</td>
+        <td>{{name}}<td>
+        <td>{{surname}}<td>
+        <td><a href="/users/delete/{{id}}">X</a> </td>
+    </tr>
+    </tbody>
+</table>
+{{/users}}
+</body>
+</html>
